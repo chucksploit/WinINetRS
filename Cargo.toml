@@ -1,0 +1,16 @@
+[package]
+name = "win_inet"
+version = "0.1.0"
+edition = "2021"
+
+repository = "https://github.com/User65k/WinINetRS"
+description = "Small wrapper around WinINet"
+license = "MIT"
+keywords = ["http", "request", "client", "windows"]
+readme = "README.md"
+
+[features]
+unicode = ["widestring"]
+
+[dependencies]
+widestring = {version ="0.5", optional = true}
