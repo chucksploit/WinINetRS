@@ -1,3 +1,12 @@
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![Crates.io][crates-badge]][crates-url]
+[![MIT licensed][mit-badge]][mit-url]
+
+[crates-badge]: https://img.shields.io/crates/v/win_inet.svg
+[crates-url]: https://crates.io/crates/win_inet
+[mit-badge]: https://img.shields.io/badge/license-MIT-blue.svg
+[mit-url]: https://github.com/User65k/WinINetRS/blob/main/LICENSE
+
 This is in really early stages but I wanted to call dips on the create name.
 Expect changes to the API.
 
