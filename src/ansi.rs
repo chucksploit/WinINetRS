@@ -1,5 +1,6 @@
 use std::ffi::CStr;
 
+/// str type for ffi. `CStr` for ANSI, U16CStr for unicode
 pub type WinStr = CStr;
 pub fn from_win_str(cstr: &CStr) -> LPCSTR {
     cstr.to_bytes_with_nul().as_ptr() as LPCSTR

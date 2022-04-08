@@ -1,3 +1,11 @@
+/*! A small wrapper around wininet.
+
+It provides the ANSI and the unicode (`--features unicode`) versions of WinINet.
+ANSI works with `std::ffi::CStr`.
+Unicode works with `widestring::U16CStr`.
+
+*/
+
 use std::os::raw::c_void;
 type c_int = i32;
 type DWORD = u32;

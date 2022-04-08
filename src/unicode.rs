@@ -8,6 +8,7 @@ type PWSTR = *mut WCHAR;
 
 use widestring::{U16CStr, U16CString};
 use std::slice;
+/// str type for ffi. `CStr` for ANSI, U16CStr for unicode
 pub type WinStr = U16CStr;
 
 pub fn from_win_str(oss: &U16CStr) -> LPCWSTR {
