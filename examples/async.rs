@@ -39,7 +39,7 @@ fn work() -> std::io::Result<()> {
 
     let mut agent = WinINet::new(
       &agent,
-      InternetOpenType::PRECONFIG,
+      InternetOpenType::Preconfig,
       None,
       None,
     )?;
@@ -88,7 +88,7 @@ unsafe extern "system" fn callback(
     info: win_inet::LPVOID,
     info_len: u32,
 ) {
-    if status == InternetStatus::REQUEST_COMPLETE as u32 {
+    if status == InternetStatus::RequestComplete as u32 {
       let ares = &*(info as *mut INTERNET_ASYNC_RESULT);
       println!("{} Request complete {} {:?}", context, ares.dwError, handle);
       if let Some(w) = barrier.as_ref() {
@@ -97,7 +97,7 @@ unsafe extern "system" fn callback(
       //let r = &*(context as *const WinINetRequest);
       return;
     }
-    if status == InternetStatus::HANDLE_CREATED as u32 {
+    if status == InternetStatus::HandleCreated as u32 {
       let ares = &*(info as *mut INTERNET_ASYNC_RESULT);
       println!("{} Handle created {}", context, ares.dwError);
       return;

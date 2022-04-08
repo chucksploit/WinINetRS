@@ -10,16 +10,16 @@ use widestring::{U16CStr, U16CString};
 use std::slice;
 pub type WinStr = U16CStr;
 
-pub fn FromWinStr(oss: &U16CStr) -> LPCWSTR {
+pub fn from_win_str(oss: &U16CStr) -> LPCWSTR {
     oss.as_ptr()
 }/*
 fn ToOsStr(cmdarg: LPCWSTR) -> U16CString {
     unsafe {U16CString::from_ptr_str(cmdarg)}
 }*/
 
-pub fn FromWinStrOrNull(oss: Option<&U16CStr>) -> LPCWSTR {
+pub fn from_win_str_or_null(oss: Option<&U16CStr>) -> LPCWSTR {
     if let Some(p) = oss {
-        FromWinStr(p)
+        from_win_str(p)
     } else {
         0 as *const u16
     }

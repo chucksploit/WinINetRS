@@ -1,15 +1,15 @@
 use std::ffi::CStr;
 
 pub type WinStr = CStr;
-pub fn FromWinStr(cstr: &CStr) -> LPCSTR {
+pub fn from_win_str(cstr: &CStr) -> LPCSTR {
     cstr.to_bytes_with_nul().as_ptr() as LPCSTR
 }/*
 fn ToOsStr(cmdarg: LPCSTR) -> &CStr {
     unsafe { CStr::from_ptr(cmdarg) }
 }*/
-pub fn FromWinStrOrNull(oss: Option<&CStr>) -> LPCSTR {
+pub fn from_win_str_or_null(oss: Option<&CStr>) -> LPCSTR {
     if let Some(p) = oss {
-        FromWinStr(p)
+        from_win_str(p)
     } else {
         0 as *const i8
     }
